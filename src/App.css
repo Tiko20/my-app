@@ -1,38 +1,56 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.ruletka {
+  width: 600px;
+  height: 600px;
+  border: 1px solid black;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  overflow: hidden;
 }
 
-.App-link {
-  color: #61dafb;
+.circle-ruletka {
+  width: 500px;
+  height: 500px;
+  background-image: repeating-conic-gradient(rgb(181, 144, 236) 0deg 10deg, rgba(228, 226, 63, 0.679) 10deg 20deg);
+  overflow: hidden;
+  border-radius: 50%;
+  border: 1px solid black;
+  clip-path: circle(50% at 50% 50%);
+  transition: 2000ms;
+  position: relative;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.parent-ball {
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  border: 1px solid black;
+  clip-path: circle(50% at 50% 50%);
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  transition: 3000ms;
+}
+
+.ball {
+  width: 25px;
+  height: 25px;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.numbers {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform: rotateZ(-6.5deg);
+  font-size: large;
+  z-index: -1;
+}
+.numbers span{
+  position: absolute;
+  text-align: center;
+  transform-origin: 0 250px;
+  left: 50%;
 }
